@@ -1,0 +1,196 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: #ccc;
+}
+.home-slider {
+	position: relative;
+}
+.home-slider .slide img {
+	display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+.home-slider .slide-info {
+	position: absolute;
+    top: 57%;
+    left: 0;
+    right: 0;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-height: 380px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.home-slider .slide-title {
+	font-size: 50px;
+	color: #1b5586;
+	width: 780px;
+	max-width: 100%;
+	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+a.button-link {
+	line-height: 48px;
+	padding: 0 40px 0 20px;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #fff;
+	display: inline-block;
+	text-decoration: none;
+	border: 1px solid transparent;
+	letter-spacing: 1px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+a.button-link.button-lg {
+	line-height: 60px;
+	font-size: 17px;
+}
+.home-slider .slide-info a:first-of-type {
+	background-color: #56a9f0;
+}
+.home-slider .slide-info a:last-of-type {
+	background-color: #30d28f;
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+}
+
+.home-slider .slide {
+	transition: opacity 2s ease;
+}
+.home-slider .slide.name-compose {
+	position: relative;
+	z-index: 1;
+}
+.home-slider .slide:not(.name-compose) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+.home-slider .slide.activeSlide {
+	z-index: 2;
+	opacity: 1;
+}
+.home-slider .slide.removeSlide {
+	z-index: 1;
+	opacity: 0;
+}
+
+.name-compose .slide-title {
+	opacity: 0;
+}
+.name-compose .slide-title.active {
+	opacity: 1;
+}
+.name-compose .slide-title .word-wrapper {
+	display: inline-block;
+	margin-right: 14px;
+}
+.name-compose .slide-title .char {
+	display: inline-block;
+	transition: transform 3s ease, opacity 3s ease;
+	opacity: 0;
+}
+.name-compose .slide-title.active .char {
+	transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px) !important;
+	opacity: 1;
+}
+
+.home-slider .slider-navigation {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+}
+.home-slider .slider-navigation li {
+	display: inline-block;
+	margin-right: 10px;
+	width: 20px;
+	height: 20px;
+	position: relative;
+	cursor: pointer;
+}
+.home-slider .slider-navigation li:before {
+	content: "";
+	background-image: url(../img/slider-nav-button.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.home-slider .slider-navigation li.active:before {
+	background-image: url(../img/slider-nav-button-active.png);
+}
+
+.home-slider .button-learn {
+	opacity: 0;
+	transform: translateX(-100%);
+	transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.home-slider .button-learn.active {
+	opacity: 1;
+	transform: translateX(0%);
+}
+.home-slider .button-find {
+	opacity: 0;
+	transform: translateX(-100%);
+	transition: transform 0.5s ease 0.5s, opacity 0.5s ease 0.5s;
+}
+.home-slider .button-find.active {
+	opacity: 1;
+	transform: translateX(0%);
+}
+
+.name-flowing-y .slide-title > div {
+	display: inline-block;
+	opacity: 0;
+	transform: translateY(-250%) scale(2);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.name-flowing-y .slide-title.active > div {
+	opacity: 1;
+	transform: translateY(0%) scale(1);
+}
+.name-flowing-y .blank {
+	margin: 0 7px;
+}
+
+.name-flowing-x .slide-title > div {
+	display: inline-block;
+	opacity: 0;
+	transform: translateX(-250%) scale(2);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.name-flowing-x .slide-title.active > div {
+	opacity: 1;
+	transform: translateX(0%) scale(1);
+}
+.name-flowing-x .blank {
+	margin: 0 7px;
+}
+
+.word-showing .slide-title > div {
+	display: inline-block;
+	margin-right: 14px;
+	opacity: 0;
+	transform: scale(0);
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.word-showing .slide-title.active > div {
+	opacity: 1;
+	transform: scale(1);
+}
